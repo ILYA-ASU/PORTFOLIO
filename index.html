@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Levitating Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Фон-матрица -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Лепестки сакуры -->
+    <canvas id="sakura-canvas"></canvas>
+
+    <!-- Левая сакура в верхнем левом углу -->
+    <img class="sakura-left" src="images/Sakura/left.png" alt="">
+
+    <!-- ===== СЕКЦИЯ 1 ===== -->
+    <section class="section" data-index="0">
+        <header>
+            <h1>KVANT — SET 01</h1>
+            <p>Колесо — вниз · Клик по карточке</p>
+        </header>
+        <div class="scene">
+            <img class="sakura-center" src="images/Sakura/sakura_no_fon.png" alt="">
+            <div class="cards-layer" data-images="set1"></div>
+        </div>
+        <footer><span class="counter" data-counter="set1">01 / 10</span></footer>
+        <div class="scroll-hint">↓</div>
+    </section>
+
+    <!-- ===== СЕКЦИЯ 2 ===== -->
+    <section class="section" data-index="1">
+        <header>
+            <h1>BETONSTAL</h1>
+            <p>Колесо вверх / вниз · Клик по карточке</p>
+        </header>
+        <div class="scene">
+            <img class="sakura-center" src="images/Sakura/sakura_no_fon.png" alt="">
+            <div class="cards-layer" data-images="set2"></div>
+        </div>
+        <footer><span class="counter" data-counter="set2">01 / 10</span></footer>
+        <div class="scroll-hint">↕</div>
+    </section>
+
+    <!-- ===== СЕКЦИЯ 3 ===== -->
+    <section class="section" data-index="2">
+        <header>
+            <h1>PR200</h1>
+            <p>Колесо вверх / вниз · Клик по карточке</p>
+        </header>
+        <div class="scene">
+            <img class="sakura-center" src="images/Sakura/sakura_no_fon.png" alt="">
+            <div class="cards-layer" data-images="set3"></div>
+        </div>
+        <footer><span class="counter" data-counter="set3">01 / 10</span></footer>
+        <div class="scroll-hint">↕</div>
+    </section>
+
+    <!-- ===== СЕКЦИЯ 4 ===== -->
+    <section class="section" data-index="3">
+        <header>
+            <h1>DALGAKIRAN</h1>
+            <p>Колесо вверх / вниз · Клик по карточке</p>
+        </header>
+        <div class="scene">
+            <img class="sakura-center" src="images/Sakura/sakura_no_fon.png" alt="">
+            <div class="cards-layer" data-images="set4"></div>
+        </div>
+        <footer><span class="counter" data-counter="set4">01 / 10</span></footer>
+        <div class="scroll-hint">↕</div>
+    </section>
+
+    <!-- ===== СЕКЦИЯ 5 ===== -->
+    <section class="section" data-index="4">
+        <header>
+            <h1>KVANT — SET 05</h1>
+            <p>Колесо — вверх · Клик по карточке</p>
+        </header>
+        <div class="scene">
+            <img class="sakura-center" src="images/Sakura/sakura_no_fon.png" alt="">
+            <div class="cards-layer" data-images="set5"></div>
+        </div>
+        <footer><span class="counter" data-counter="set5">01 / 10</span></footer>
+        <div class="scroll-hint">↑</div>
+    </section>
+
+<!-- Кнопка "Обо мне" -->
+<button class="about-btn" id="about-btn">
+    <span class="about-btn-text">ОБО МНЕ</span>
+    <span class="about-btn-glow"></span>
+</button>
+
+    <!-- Кнопка "Связаться" -->
+<button class="contact-btn" id="contact-btn">
+    <span class="contact-btn-text">СВЯЗАТЬСЯ</span>
+    <span class="contact-btn-glow"></span>
+</button>
+
+<!-- Кнопка "Музыка" -->
+<button class="music-btn" id="music-btn" aria-label="Play / Pause">
+    <span class="music-btn-icon" id="music-btn-icon">▶</span>
+    <span class="music-btn-text">MUSIC</span>
+    <span class="music-btn-glow"></span>
+</button>
+
+<!-- Аудио -->
+<audio id="bg-music" loop preload="auto">
+    <source src="audio/EverlastingSummer.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Модальное окно с контактами -->
+<div class="contact-modal" id="contact-modal">
+    <div class="contact-modal-inner">
+        <div class="contact-modal-close" id="contact-modal-close">✕</div>
+        <h2 class="contact-modal-title">СВЯЗАТЬСЯ СО МНОЙ</h2>
+        <p class="contact-modal-sub">Выбери удобный мессенджер</p>
+        <div class="contact-links">
+
+            <a class="contact-link" href="https://t.me/old_rabbitt" target="_blank" rel="noopener">
+                <span class="contact-link-icon">✈</span>
+                <span class="contact-link-name">Telegram</span>
+                <span class="contact-link-handle">@old_rabbitt</span>
+            </a>
+
+            <a class="contact-link" href="https://wa.me/79217371760" target="_blank" rel="noopener">
+                <span class="contact-link-icon">💬</span>
+                <span class="contact-link-name">WhatsApp</span>
+                <span class="contact-link-handle">+7 9217371760</span>
+            </a>
+
+            <a class="contact-link" href="mailto:ivanov.ilya186@yandex.ru" target="_blank" rel="noopener">
+                <span class="contact-link-icon">✉</span>
+                <span class="contact-link-name">Email</span>
+                <span class="contact-link-handle">ivanov.ilya186@yandex.ru</span>
+            </a>
+
+            <a class="contact-link" href="https://vk.ru/proforgvn" target="_blank" rel="noopener">
+                <span class="contact-link-icon">vk</span>
+                <span class="contact-link-name">Vkontakte</span>
+                <span class="contact-link-handle">@proforgvn</span>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+    <!-- Модальное окно "Обо мне" -->
+<div class="about-modal" id="about-modal">
+    <div class="about-modal-inner">
+        <div class="about-modal-close" id="about-modal-close">✕</div>
+        <h2 class="about-modal-title">ОБО МНЕ</h2>
+        <p class="about-modal-sub">Разработчик · Дизайнер · Инженер</p>
+
+        <div class="about-modal-body">
+            <p>
+                Привет! Меня зовут <strong>Илья</strong>. Я занимаюсь разработкой
+                программ для контроллеров и визуализацией данных для промышленных систем.
+            </p>
+            <p>
+                Работаю с <span class="about-highlight">PLC</span>,
+                <span class="about-highlight">HMI</span>,
+                <span class="about-highlight">SCADA</span>,
+                 создаю интерфейсы для <span class="about-highlight">АСУ ТП</span> и выполняю 
+                 <span class="about-highlight">ПНР</span> .
+            </p>
+            <p>
+                Моя цель — делать сложные технические системы
+                <span class="about-highlight">понятными</span> и
+                <span class="about-highlight">красивыми</span>.
+            </p>
+
+            <div class="about-stats">
+                <div class="about-stat">
+                    <span class="about-stat-num">3+</span>
+                    <span class="about-stat-label">ЛЕТ ОПЫТА</span>
+                </div>
+                <div class="about-stat">
+                    <span class="about-stat-num">30+</span>
+                    <span class="about-stat-label">ПРОЕКТОВ</span>
+                </div>
+                <div class="about-stat">
+                    <span class="about-stat-num">∞</span>
+                    <span class="about-stat-label">ИДЕЙ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Створки перехода -->
+    <div class="curtain" id="curtain">
+        <div class="curtain-line"></div>
+    </div>
+
+    <!-- Точки прогресса -->
+    <div class="progress-dots" id="progress-dots"></div>
+
+    <!-- Лайтбокс -->
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
